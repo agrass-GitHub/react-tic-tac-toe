@@ -136,15 +136,13 @@ class Game extends React.Component {
 
   squareClick(coord, square) {
     if (this.state.winPlayer) return;
-    let data = Object.assign({}, this.state.data);
+    let data = JSON.parse(JSON.stringify(this.state.data));
     data[coord] = square;
     let winCoords = this.calculateWinnerByCoord(data, square);
     let winPlayer = "";
     if (winCoords) {
       winPlayer = winCoords[0].value;
-      winCoords.forEach(v => {
-        data[`${v.y}${v.x}`].win = true;
-      });
+      winCoords.forEach(v => (data[`${v.y}${v.x}`].win = true));
     }
     let nextPlayer = square.value === "o" ? "x" : "o";
     let stepIndex = this.state.history.length;

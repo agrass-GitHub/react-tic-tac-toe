@@ -30,7 +30,10 @@ const warpEles = (Component, len) => {
 };
 
 const Squares = props => {
-  return warpEles(i => <Square {...props} key={i} x={i} />, props.width);
+  return warpEles(
+    x => <Square {...props} key={`${props.y},${x}`} x={x} />,
+    props.width
+  );
 };
 
 const BoardRows = props => {
