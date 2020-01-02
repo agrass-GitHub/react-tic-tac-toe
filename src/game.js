@@ -1,7 +1,7 @@
 import React from "react";
-import Controller from "./Controller";
-import Board from "./Board";
-import History from "./History";
+import Controller from "./controller";
+import Board from "./board";
+import History from "./history";
 import "./style.scss";
 
 class Game extends React.Component {

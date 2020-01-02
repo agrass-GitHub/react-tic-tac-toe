@@ -16,7 +16,7 @@ const Square = props => {
 
   return (
     <div className={className} onClick={click} title={`${y},${x}`}>
-      {square.value}
+      <span> {square.value}</span>
     </div>
   );
 };
